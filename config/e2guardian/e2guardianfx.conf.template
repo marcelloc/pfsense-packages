@@ -30,7 +30,7 @@
 */
 /* ========================================================================== */
 
-$dgf= <<<EOF
+$e2fxconf = <<<EOF
 # e2guardian filter group config file for version 3.1.2
 
 
