@@ -880,7 +880,7 @@ function sync_package_e2guardian($via_rpc = "no", $install_process = false) {
 
 		$e2_dir = E2GUARDIAN_DIR;
 		include ("/usr/local/pkg/e2guardianfx.conf.template");
-		file_put_contents($e2guardian_dir . "/e2guardianf" . $count . ".conf", $dgf, LOCK_EX);
+		file_put_contents($e2guardian_dir . "/e2guardianf" . $count . ".conf", $e2fxconf, LOCK_EX);
 
 		if ($config['installedpackages']['e2guardianusers']['config'][0][$e2guardian_group_name] != "") {
 			$import_users = explode("\n", base64_decode($config['installedpackages']['e2guardianusers']['config'][0][$e2guardian_group_name]));
@@ -1174,7 +1174,7 @@ EOF;
 	mwexec("chown -R $daemonuser:$daemongroup /var/log/e2guardian");
 
 	// create config files
-	file_put_contents($e2guardian_dir . "/e2guardian.conf", $dg, LOCK_EX);
+	file_put_contents($e2guardian_dir . "/e2guardian.conf", $e2conf, LOCK_EX);
 
 	// check virus_scanner options
 	$libexec_dir = E2GUARDIAN_DIR . "/libexec/e2guardian/";
